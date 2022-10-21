@@ -122,7 +122,8 @@ function! s:RestoreSearchHistory(index)
     while histnr('search') > max([a:index, 0])
         call histdel('search', -1)
     endwhile
-    let @/ = histget('search', -1)
+    " jwu bugfix
+    " let @/ = histget('search', -1)
 endfunction
 
 " query per-buffer setting for whitespace highlighting
